@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>To Kitty</title>
+</head>
+<body>
+<div><a href="https://github.com/yomotsu/GLSlideshow">GitHub repo</a></div>
+
+
+
+<canvas id="WEBGLCanvas"
+style="z-index: 1;
+position:absolute;
+left:0px;
+top:0px;
+" height="1024" width="576">
+
+</canvas>
+
+
+
+<canvas id="TextCanvas"
+style="z-index: 2;
+position:absolute;
+left:0px;
+top:0px;
+" height="1024" width="576">
+
+</canvas>
+
+
+
+<script src="gl-slideshow.js"></script>
+<script>
+const slideshow = new GLSlideshow(
+	[ './img/why_1.jpg', './img/why_2.jpg', './img/why_3.jpg', './img/why_4.jpg', './img/why_5.jpg' ],
+	{
+		canvas: document.getElementById( 'WEBGLCanvas' ), // optional
+		width: 1024,        // optional
+		height: 576,        // optional
+		duration: 3000,     // optional
+		interval: 3000,     // optional
+		effect: 'pageCurl' // optional
+	}
+);
+
+const canvas = document.getElementById("TextCanvas");
+const ctx = canvas.getContext("2d");
+
+ctx.font = "50px Arial";
+<!--ctx.fillText("Hello World", 300, 100);--> 
+</script>
+
+
+
+
+</body>
+</html>
